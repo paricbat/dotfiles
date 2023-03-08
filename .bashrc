@@ -3,13 +3,12 @@ if [[ $- != *i* ]] ; then
 	return
 fi
 
+export GPG_TTY=$(tty)
+
 function mkenter() {
 	mkdir -pv $1
 	cd $1
 }
-
-alias hd=hexdump
-alias emerge-syup="doas emaint -a sync && doas emerge -auvDN @world"
 
 # git fetch merge
 function git-fm() {
@@ -17,5 +16,9 @@ function git-fm() {
 	git merge upstream/$1
 }
 
-export GPG_TTY=$(tty)
+
+alias hd=hexdump
+
+export PATH="/home/paricbat/.cargo/bin:$PATH"
+export LIBCLANG_PATH=$(llvm-config --prefix)/lib64
 
