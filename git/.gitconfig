@@ -1,0 +1,10 @@
+[init]
+	defaultBranch = main
+[user]
+	email = paricbat@projectspink.eu
+	name = Veronika Bušová
+	signingkey = 397CC1FDD8C9C046
+[commit]
+	gpgsign = true
+[tag]
+	gpgSign = true
