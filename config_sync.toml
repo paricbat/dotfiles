@@ -1,0 +1,35 @@
+[[dir]]
+source = "alacritty"
+target = "~/.config/alacritty"
+exact = true
+
+[[dir]]
+source = "bat"
+target = "~/.config/bat"
+exact = true
+
+[[dir]]
+source = "cargo"
+target = "~/.cargo"
+exact = false
+
+[[file]]
+source = "firefox/user.js"
+target = "~/.var/app/org.mozilla.firefox/.mozilla/firefox/xt4gifl3.default-release/user.js"
+
+[[dir]]
+source = "fish"
+target = "~/.config/fish"
+exact = false
+
+[[file]]
+source = "git/.gitconfig"
+target = "~/.gitconfig"
+
+[[file]]
+source = "starship/starship.toml"
+target = "~/.config/starship.toml"
+
+[[dir]]
+source = "tmux"
+target = "~/.config/tmux"
