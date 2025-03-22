@@ -2,6 +2,8 @@ fish_add_path ~/.local/bin
 fish_add_path ~/.local/bin/pulumi
 
 if status is-interactive
+    set -gx EDITOR nvim
+
     starship init fish | source
     zoxide init fish | source
 
