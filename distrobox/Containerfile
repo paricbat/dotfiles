@@ -1,0 +1,11 @@
+FROM fedora:42
+
+RUN dnf install -y --nogpgcheck --repofrompath 'terra,https://repos.fyralabs.com/terra$releasever' terra-release
+RUN dnf update -y
+# Basics
+RUN dnf install -y git neovim bat fd-find fish wl-clipboard zoxide tmux starship awk
+# Extras
+RUN dnf install -y codium
+# Dev stuff
+RUN dnf install -y clang clangd mold lld openssl-devel libgit2-devel cmake meson
+RUN dnf clean all
