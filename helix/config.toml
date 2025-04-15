@@ -17,3 +17,7 @@ other-lines = "error"
 [editor.lsp]
 display-progress-messages = true
 display-inlay-hints = true
+
+[keys.normal]
+"0" = "goto_line_start"
+"$" = "goto_line_end"
