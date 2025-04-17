@@ -1,4 +1,5 @@
 font-family = "FiraCode Nerd Font"
+font-feature = "-calt"
 theme = "catppuccin-mocha.conf"
 shell-integration-features = "no-cursor"
 command = "fish"
