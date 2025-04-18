@@ -3,7 +3,7 @@ FROM fedora:42
 RUN dnf install -y --nogpgcheck --repofrompath 'terra,https://repos.fyralabs.com/terra$releasever' terra-release
 RUN dnf update -y
 # Basics
-RUN dnf install -y git neovim helix bat fd-find fish wl-clipboard zoxide tmux starship awk pinentry-gnome3
+RUN dnf install -y git neovim helix bat fd-find fish wl-clipboard zoxide tmux starship awk pinentry-gnome3 wget
 # Extras
 RUN dnf install -y codium
 # Dev stuff
