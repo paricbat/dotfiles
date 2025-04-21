@@ -8,5 +8,7 @@ RUN dnf install -y git neovim helix bat fd-find fish wl-clipboard zoxide tmux st
 RUN dnf install -y codium
 # Dev stuff
 RUN dnf install -y clang clangd mold lld cmake meson just git-lfs xxd \
-    openssl-devel libgit2-devel SDL3-devel
+    openssl-devel libgit2-devel SDL3-devel pre-commit
+# Other things
+RUN dnf install -y sops
 RUN dnf clean all
