@@ -3,7 +3,7 @@ fish_add_path ~/.local/bin/pulumi
 fish_add_path ~/.local/bin/omnisharp
 
 if status is-interactive
-    set -gx EDITOR nvim
+    set -gx EDITOR hx
 
     starship init fish | source
     zoxide init fish | source
