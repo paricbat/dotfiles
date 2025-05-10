@@ -1,0 +1,12 @@
+FROM chimeralinux/chimera:latest
+
+RUN apk update
+RUN apk add chimera-repo-user
+# Basic Stuff
+RUN apk add git helix bat fd fish-shell wl-clipboard zoxide tmux starship gawk pinentry-gnome3 \
+  wget eza util-linux util-linux-mount openssh gnupg
+# Dev stuff
+RUN apk add clang clang-tools-extra mold lld cmake meson just git-lfs xxd openssl3-devel libgit2-devel sdl3-devel
+# Media
+RUN apk add ffmpeg gstreamer gst-libav gst-plugins-base gst-plugins-good gst-plugins-bad gst-plugins-ugly
+RUN apk cache purge
