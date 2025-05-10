@@ -6,6 +6,7 @@ RUN dnf copr enable -y atim/starship
 RUN dnf update -y
 # Basics
 RUN dnf install -y git neovim helix bat fd-find fish wl-clipboard zoxide tmux starship awk pinentry-gnome3 wget
+RUN dnf install -y --nogpgcheck --repofrompath 'terra,https://repos.fyralabs.com/terra$releasever' eza
 # Dev stuff
 RUN dnf install -y clang clangd mold lld cmake meson just git-lfs xxd \
     openssl-devel libgit2-devel SDL3-devel pre-commit
