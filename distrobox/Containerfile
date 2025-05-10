@@ -1,14 +1,18 @@
 FROM fedora:42
 
-RUN dnf install -y --nogpgcheck --repofrompath 'terra,https://repos.fyralabs.com/terra$releasever' terra-release
+RUN dnf install -y https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm \
+            https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
+RUN dnf copr enable -y atim/starship
 RUN dnf update -y
 # Basics
 RUN dnf install -y git neovim helix bat fd-find fish wl-clipboard zoxide tmux starship awk pinentry-gnome3 wget
-# Extras
-RUN dnf install -y codium
 # Dev stuff
 RUN dnf install -y clang clangd mold lld cmake meson just git-lfs xxd \
     openssl-devel libgit2-devel SDL3-devel pre-commit
+# Gaming
+RUN dnf install -y wine wine-mono wine-dxvk winetricks
+# Media
+RUN dnf group install -y multimedia
 # Other things
-RUN dnf install -y sops
+RUN dnf install -y unrar
 RUN dnf clean all
