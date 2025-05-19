@@ -5,7 +5,8 @@ RUN dnf install -y https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-rele
 RUN dnf copr enable -y atim/starship
 RUN dnf update -y
 # Basics
-RUN dnf install -y git neovim helix bat fd-find fish wl-clipboard zoxide tmux starship awk pinentry-gnome3 wget
+RUN dnf install -y git neovim helix bat fd-find fish wl-clipboard zoxide tmux starship awk \
+    pinentry-gnome3 wget
 RUN dnf install -y --nogpgcheck --repofrompath 'terra,https://repos.fyralabs.com/terra$releasever' eza
 # Dev stuff
 RUN dnf install -y clang clangd mold lld cmake meson just git-lfs xxd \
@@ -14,6 +15,9 @@ RUN dnf install -y clang clangd mold lld cmake meson just git-lfs xxd \
 RUN dnf install -y wine wine-mono wine-dxvk winetricks
 # Media
 RUN dnf group install -y multimedia
+# Graphics programming
+RUN dnf install -y mesa-vulkan-drivers glfw-devel vulkan-validation-layers vulkan-headers \
+    vulkan-loader-devel vulkan-tools
 # Other things
 RUN dnf install -y unrar
 RUN dnf clean all

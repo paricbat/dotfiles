@@ -1,2 +1,2 @@
-podman build -t chimera-dbox-image . &&
+podman build --pull=always -t chimera-dbox-image . &&
   distrobox assemble create --replace ./chimera-dbox.ini
