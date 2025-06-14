@@ -10,7 +10,8 @@ RUN dnf install -y git neovim helix bat fd-find fish wl-clipboard zoxide tmux st
 RUN dnf install -y --nogpgcheck --repofrompath 'terra,https://repos.fyralabs.com/terra$releasever' eza
 # Dev stuff
 RUN dnf install -y clang clangd mold lld cmake meson just git-lfs xxd \
-    openssl-devel libgit2-devel SDL3-devel pre-commit dotnet-host dotnet-sdk-9.0
+    openssl-devel libgit2-devel SDL3-devel pre-commit dotnet-host dotnet-sdk-9.0 \
+    spdlog-devel
 # Gaming
 RUN dnf install -y wine wine-mono wine-dxvk winetricks
 # Media
