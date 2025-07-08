@@ -6,12 +6,13 @@ RUN dnf copr enable -y atim/starship
 RUN dnf update -y
 # Basics
 RUN dnf install -y git neovim helix bat fd-find fish wl-clipboard zoxide tmux starship awk \
-    pinentry-gnome3 wget
-RUN dnf install -y --nogpgcheck --repofrompath 'terra,https://repos.fyralabs.com/terra$releasever' eza
+    pinentry-gnome3 wget direnv
+RUN dnf install -y --nogpgcheck --repofrompath 'terra,https://repos.fyralabs.com/terra$releasever' \
+    eza sops age
 # Dev stuff
 RUN dnf install -y clang clangd mold lld cmake meson just git-lfs xxd \
     openssl-devel libgit2-devel SDL3-devel pre-commit dotnet-host dotnet-sdk-9.0 \
-    spdlog-devel
+    spdlog-devel ansible
 # Media
 RUN dnf group install -y multimedia
 # Graphics programming
