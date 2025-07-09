@@ -6,7 +6,7 @@ RUN dnf copr enable -y atim/starship
 RUN dnf update -y
 # Basics
 RUN dnf install -y git neovim helix bat fd-find fish wl-clipboard zoxide tmux starship awk \
-    pinentry-gnome3 wget direnv
+    pinentry-gnome3 wget direnv file
 RUN dnf install -y --nogpgcheck --repofrompath 'terra,https://repos.fyralabs.com/terra$releasever' \
     eza sops age
 # Dev stuff
