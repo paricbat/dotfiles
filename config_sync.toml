@@ -13,10 +13,6 @@ source = "cargo"
 target = "~/.cargo"
 exact = false
 
-[[file]]
-source = "firefox/user.js"
-target = "~/.var/app/org.mozilla.firefox/.mozilla/firefox/xt4gifl3.default-release/user.js"
-
 [[dir]]
 source = "fish"
 target = "~/.config/fish"
@@ -33,3 +29,17 @@ target = "~/.config/starship.toml"
 [[dir]]
 source = "tmux"
 target = "~/.config/tmux"
+
+[[dir]]
+source = "ghostty"
+target = "~/.config/ghostty"
+exact = true
+
+[[dir]]
+source = "helix"
+target = "~/.config/helix"
+exact = true
+
+[[file]]
+source = "mpv/mpv.conf"
+target = "~/.config/mpv/mpv.conf"
