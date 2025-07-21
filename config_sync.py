@@ -14,7 +14,7 @@ def diffs(args, cfg):
             f"diff {file["source"]} {file["target"]}",
             attrs=["bold"]
         ))
-        subproc = subprocess.run(["/bin/sh", "-c", f"diff {file["source"]} {file["target"]}"], stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
+        subproc = subprocess.run(["/bin/sh", "-c", f"diff --color=always {file["source"]} {file["target"]}"], stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
         if len(subproc.stdout) == 0:
             print(colored("No diff", "green"))
         else:
