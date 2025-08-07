@@ -4,3 +4,4 @@ theme = "catppuccin-mocha.conf"
 shell-integration-features = "no-cursor"
 command = "fish"
 maximize = true
+window-decoration = "client"

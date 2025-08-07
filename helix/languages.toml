@@ -1,1 +1,40 @@
+[language-server.clangd]
+args = ["-j", "6", "--pch-storage=memory", "--background-index", "--malloc-trim"]
+timeout = 75
 
+[[language]]
+name = "c"
+formatter = { command = "clang-format" }
+[[language]]
+name = "cpp"
+formatter = { command = "clang-format" }
+[[language]]
+name = "toml"
+formatter = { command = "taplo", args = ["format", "-"] }
+auto-format = true
+
+# Python
+[language-server.ruff]
+command = "ruff"
+args = ["server"]
+[[language]]
+name = "python"
+language-servers = ["ruff"]
+
+# Deno
+[[language]]
+name = "typescript"
+roots = ["deno.json", "deno.jsonc", "package.json"]
+file-types = ["ts", "tsx"]
+auto-format = true
+language-servers = ["deno-lsp"]
+[[language]]
+name = "javascript"
+roots = ["deno.json", "deno.jsonc", "package.json"]
+file-types = ["js", "jsx"]
+auto-format = true
+language-servers = ["deno-lsp"]
+[language-server.deno-lsp]
+command = "deno"
+args = ["lsp"]
+config.deno.enable = true
